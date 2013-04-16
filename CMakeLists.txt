@@ -8,9 +8,10 @@ set (TINYXML "tinyxml")
 
 
 ##################### Find, include, and compile library #####################
-find_package(Eigen REQUIRED)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+find_package(Eigen3 REQUIRED)
 include_directories(./include)
-include_directories(${Eigen_INCLUDE_DIRS})
+include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${TINYXML})
 
 # Build a library to be imported as a python module.
